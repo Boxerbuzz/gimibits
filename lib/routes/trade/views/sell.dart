@@ -77,13 +77,14 @@ class _SellState extends State<Sell> with FormMixin {
           ],
         ),
         SizedBox(height: 20.0),
-        FlatButton(
+        TextButton(
           onPressed: () {},
-          disabledColor: R.C.kInactiveChartColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(4.0),
+          style: TextButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4.0),
+            ),
+            backgroundColor: R.C.kRedColor,
           ),
-          color: R.C.kRedColor,
           child: Padding(
             padding: EdgeInsets.symmetric(vertical: 15.0),
             child: Row(

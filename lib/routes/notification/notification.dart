@@ -210,7 +210,7 @@ class _NotificationCardState extends State<NotificationCard>
                                           maxLines: 5,
                                           overflow: TextOverflow.ellipsis,
                                         ),
-                                        OutlineButton(
+                                        OutlinedButton(
                                           onPressed: () {},
                                           child: Text(
                                             'More',
@@ -218,10 +218,14 @@ class _NotificationCardState extends State<NotificationCard>
                                               color: AppTheme.getColor(context),
                                             ),
                                           ),
-                                          color: color.primary,
-                                          textColor: Colors.black54,
-                                          borderSide: BorderSide(
-                                            color: color.primary,
+                                          style: OutlinedButton.styleFrom(
+                                            backgroundColor: color.primary,
+                                            textStyle: TextStyle(
+                                              color: Colors.black54,
+                                            ),
+                                            side: BorderSide(
+                                              color: color.primary,
+                                            ),
                                           ),
                                         )
                                       ],

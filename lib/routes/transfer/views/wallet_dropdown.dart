@@ -105,7 +105,7 @@ class _WalletDropdownOptionsState extends State<WalletDropdownOptions> {
       key: _scaffoldKey,
       appBar: FullDialogAppBar(
         title: widget.title,
-        action: FlatButton(
+        action: TextButton(
           child: IconWidget(iconPath: R.I.icCheck, padding: 5.0),
           onPressed: _sendSelectedOption,
         ),

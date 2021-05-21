@@ -152,9 +152,10 @@ class _DropdownOptionsState extends State<DropdownOptions> {
         brightness: Brightness.light,
         title: Center(child: Text(widget.title, style: Styles.optionsTitle)),
         actions: <Widget>[
-          FlatButton(
-              child: Text('Done', style: Styles.textButton),
-              onPressed: _sendSelectedOption)
+          TextButton(
+            child: Text('Done', style: Styles.textButton),
+            onPressed: _sendSelectedOption,
+          )
         ],
       ),
       backgroundColor: Color(0xfff4f4f4),

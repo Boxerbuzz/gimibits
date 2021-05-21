@@ -57,7 +57,7 @@ class CryptoItem extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              ClipRect(
+             /* ClipRect(
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 child: Container(
                   height: 35.0,
@@ -76,7 +76,7 @@ class CryptoItem extends StatelessWidget {
                     },
                   ),
                 ),
-              ),
+              ),*/
               Container(
                 height: 30.0,
                 child: TextTransition(

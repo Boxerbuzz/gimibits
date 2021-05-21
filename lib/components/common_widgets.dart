@@ -44,8 +44,10 @@ extension OnPressed on Widget {
           right: 0,
           top: 0,
           bottom: 0,
-          child: FlatButton(
-            shape: RoundedRectangleBorder(borderRadius: bR),
+          child: TextButton(
+            style: TextButton.styleFrom(
+              shape: RoundedRectangleBorder(borderRadius: bR),
+            ),
             onPressed: () {
               if (onTap != null) {
                 onTap();
@@ -316,49 +318,45 @@ class CommonButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FlatButton(
+    return TextButton(
       onPressed: !_isLoading ? _onPressed : null,
-      disabledColor: R.C.kInactiveChartColor,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(4.0),
+      style: TextButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0)),
+        backgroundColor: _color ?? Theme.of(context).colorScheme.primary,
       ),
-      color: _color ?? Theme.of(context).colorScheme.primary,
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 6.0),
-        child: _isLoading
-            ? Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: SizedBox.fromSize(
-                      size: Size(48.0, 24.0),
-                      child: SpinKitThreeBounce(
-                        color: Theme.of(context).colorScheme.primary,
-                        size: 30.0,
-                      ),
+      child: _isLoading
+          ? Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: SizedBox.fromSize(
+                    size: Size(48.0, 24.0),
+                    child: SpinKitThreeBounce(
+                      color: Theme.of(context).colorScheme.primary,
+                      size: 30.0,
                     ),
                   ),
-                ],
-              )
-            : Row(
-                children: <Widget>[
-                  IconWidget(
-                    iconPath: _icon ?? R.I.icRightArrow,
+                ),
+              ],
+            )
+          : Row(
+              children: <Widget>[
+                IconWidget(
+                  iconPath: _icon ?? R.I.icRightArrow,
+                  color: Colors.white,
+                  padding: 10,
+                ),
+                Text(
+                  _title.toUpperCase(),
+                  style: GoogleFonts.quicksand(
                     color: Colors.white,
-                    padding: 10,
+                    fontSize: 18.0,
                   ),
-                  Text(
-                    _title.toUpperCase(),
-                    style: GoogleFonts.quicksand(
-                      color: Colors.white,
-                      fontSize: 18.0,
-                    ),
-                  ),
-                ],
-              ),
-      ),
+                ),
+              ],
+            ),
     );
   }
 }
@@ -384,13 +382,15 @@ class CommonOutlineButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlineButton(
+    return OutlinedButton(
       onPressed: !_isLoading ? _onPressed : null,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(30.0),
+      style: OutlinedButton.styleFrom(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(30.0),
+        ),
+        side: BorderSide(
+            color: Theme.of(context).colorScheme.primary.withOpacity(0.9)),
       ),
-      borderSide: BorderSide(
-          color: Theme.of(context).colorScheme.primary.withOpacity(0.9)),
       child: Padding(
         padding: EdgeInsets.symmetric(vertical: 8.0),
         child: _isLoading
@@ -546,9 +546,11 @@ class DefaultButton extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: 56.0,
-      child: FlatButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-        color: Theme.of(context).colorScheme.primary,
+      child: TextButton(
+        style: TextButton.styleFrom(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+          backgroundColor: Theme.of(context).colorScheme.primary,
+        ),
         onPressed: press,
         child: Text(
           text,

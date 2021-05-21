@@ -155,7 +155,7 @@ class _ScanBarCodeState extends State<ScanBarCode> {
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
       setState(() {
-        qrText = scanData;
+        //qrText = scanData;
       });
     });
   }

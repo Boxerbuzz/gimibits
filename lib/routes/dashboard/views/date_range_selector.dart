@@ -49,9 +49,11 @@ class _DateRangeSelectorState extends State<DateRangeSelector> {
   }
 
   Widget createDropWidget() {
-    return OutlineButton(
+    return OutlinedButton(
       onPressed: () {},
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+      style: OutlinedButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)),
+      ),
       child: DropdownButton<String>(
         underline: SizedBox.shrink(),
         value: mainValue,

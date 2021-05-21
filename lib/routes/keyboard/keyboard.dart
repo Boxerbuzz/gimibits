@@ -61,7 +61,7 @@ class _Keys {
   _Keys({this.format, this.title, this.route});
 
   static List<_Keys> getKeys() {
-    List<_Keys> list = new List<_Keys>();
+    List<_Keys> list = [];
     list.add(_Keys(title: '1'));
     list.add(_Keys(title: '2'));
     list.add(_Keys(title: '3'));

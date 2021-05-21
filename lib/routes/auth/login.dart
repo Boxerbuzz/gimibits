@@ -83,7 +83,7 @@ class SignInForm extends StatelessWidget with FormMixin {
           type: InputType.text,
           initialValue: '',
         ),
-        SizedBox(height: 30.0),
+        SizedBox(height: 20.0),
         Row(
           children: [
             Expanded(
@@ -99,15 +99,15 @@ class SignInForm extends StatelessWidget with FormMixin {
               child: CommonButton(
                 iconPlace: true,
                 title: 'SIGN IN',
+                icon: R.I.icForward,
                 onPressed: () => Navigator.of(context).pushReplacement(
                   MaterialPageRoute(builder: (_) => TabHome()),
                 ),
-                icon: R.I.icForward,
               ),
             ),
           ],
         ),
-        SizedBox(height: 30.0),
+        SizedBox(height: 20.0),
         Row(
           children: [
             SizedBox(width: 20.0),
@@ -131,16 +131,17 @@ class SignInForm extends StatelessWidget with FormMixin {
             SizedBox(width: 20.0),
           ],
         ),
-        SizedBox(height: 30.0),
-        FlatButton(
+        SizedBox(height: 20.0),
+        TextButton(
           onPressed: () {},
-          disabledColor: R.C.kInactiveChartColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
+          style: TextButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4.0),
+            ),
+            backgroundColor: Colors.blueAccent.shade400,
           ),
-          color: Colors.blueAccent.shade400,
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 15.0),
+            padding: EdgeInsets.symmetric(vertical: 7.0),
             child: Row(
               children: <Widget>[
                 SvgPicture.asset(
@@ -292,15 +293,16 @@ class SignUpForm extends StatelessWidget with FormMixin {
           ],
         ),
         SizedBox(height: 30.0),
-        FlatButton(
+        TextButton(
           onPressed: () {},
-          disabledColor: R.C.kInactiveChartColor,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.0),
+          style: TextButton.styleFrom(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(4.0),
+            ),
+            backgroundColor: Colors.blueAccent.shade400,
           ),
-          color: Colors.blueAccent.shade400,
           child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 15.0),
+            padding: EdgeInsets.symmetric(vertical: 7.0),
             child: Row(
               children: <Widget>[
                 SvgPicture.asset(
@@ -311,7 +313,7 @@ class SignUpForm extends StatelessWidget with FormMixin {
                 ),
                 SizedBox(width: 20.0),
                 Text(
-                  'SIGN UP WITH FACEBOOK',
+                  'SIGN IN WITH FACEBOOK',
                   style: GoogleFonts.quicksand(
                     color: Colors.white,
                     fontSize: 18.0,
@@ -386,9 +388,7 @@ class Header extends StatelessWidget {
           width: screenSize.width,
           decoration: BoxDecoration(
             image: DecorationImage(
-              image: AssetImage(
-                'assets/images/bg.jpg',
-              ),
+              image: AssetImage('assets/images/bg.jpg'),
               fit: BoxFit.cover,
               colorFilter: ColorFilter.mode(
                 Colors.white60,

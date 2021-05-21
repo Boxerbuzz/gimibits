@@ -47,7 +47,7 @@ class _DropWidgetState extends State<DropWidget> {
   }
 
   Widget createDropWidget() {
-    return OutlineButton(
+    return OutlinedButton(
       child: DropdownButton<String>(
         value: mainValue,
         onChanged: (String newValue) {
@@ -77,7 +77,9 @@ class _DropWidgetState extends State<DropWidget> {
         }).toList(),
       ),
       onPressed: () {},
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+      style: OutlinedButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25.0)),
+      ),
     );
   }
 

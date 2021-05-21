@@ -23,7 +23,7 @@ class Helpers {
   }
 
   String locale(BuildContext context) =>
-      Localizations.localeOf(context, nullOk: true).toString();
+      Localizations.localeOf(context).toString();
 
   /// Currency formatter for NGN.
   NumberFormat fiatFormat(BuildContext context,
